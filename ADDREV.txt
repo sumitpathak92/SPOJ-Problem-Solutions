@@ -1,0 +1,42 @@
+ import java.util.Scanner;
+ class Main {
+
+	static int testCases = 0;
+	static long n1 = 0;
+	static long n2 = 0;
+	static long sum = 0;
+
+	public static void main(String[] args) throws java.lang.Exception {
+
+		Scanner sc = new Scanner(System.in);
+		testCases = sc.nextInt();
+		for (int i = 0; i < testCases; i++) {
+
+			n1 = sc.nextLong();
+			n2 = sc.nextLong();
+
+			n1 = rev(n1);// reverse the input 1
+			n2 = rev(n2);// reverse the input 2
+
+			sum = rev(n1 + n2);
+
+			System.out.println(sum);
+
+		}
+
+	}
+
+	// function to reverse the numbers
+	static long rev(long a) {
+		long d = 0;
+		while (a >= 1) {
+			d = d * 10 + a % 10;
+			a = a / 10;
+		}
+		return d;
+
+	}
+}
+
+
+

@@ -1,0 +1,57 @@
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.Scanner;
+ 
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int n, i, col, row, sign, j, k;
+		String str;
+		
+		Scanner sc = new Scanner(System.in);
+ 
+		col = sc.nextInt();
+ 
+		while (col != 0) {
+ 
+			String s;
+ 
+			str = sc.nextLine();
+			s = sc.nextLine();
+			n = s.length();
+			row = n / col;
+ 
+			char A[][] = new char[row][col];
+ 
+			sign = 1;
+			k = 0;
+			for (i = 0; i < row; i++, sign *= -1) {
+ 
+				if (sign == 1) {
+ 
+					for (j = 0; j < col; j++) {
+						A[i][j] = s.charAt(k);
+						k++;
+					}
+				} else {
+ 
+					for (j = col - 1; j >= 0; j--) {
+						A[i][j] = s.charAt(k);
+						k++;
+					}
+				}
+			}
+ 
+			for (i = 0; i < col; i++)
+				for (j = 0; j < row; j++)
+					System.out.print(A[j][i]);
+			System.out.println();
+ 
+			col = sc.nextInt();
+		}
+	}
+}

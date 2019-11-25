@@ -1,0 +1,45 @@
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int testCases;
+
+		Scanner sc = new Scanner(System.in);
+		testCases = sc.nextInt();
+		while (testCases != -1) {
+
+			int total = 0;
+			int[] candies = new int[10001];
+			for (int i = 0; i < testCases; i++) {
+				candies[i] = sc.nextInt();
+			}
+			for (int p = 0; p < testCases; p++) {
+				total += candies[p];
+			}
+			int equal = total / testCases;
+			if (total%testCases== 0) {
+				int totalmoves = 0;
+				
+				for (int j = 0; j < testCases; j++) {
+					if (candies[j]>equal) {
+
+						totalmoves += candies[j] - equal;
+					}
+				}
+				
+				System.out.println(totalmoves);
+
+			}
+
+			else {
+				System.out.println("-1");
+			}
+
+			testCases = sc.nextInt();
+		}
+	}
+}
+

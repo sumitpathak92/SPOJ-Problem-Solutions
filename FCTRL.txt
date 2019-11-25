@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class Main {
+
+	static long testCases;
+	static long number;
+	static long noOfZeros;
+
+	public static void main(String[] args) {
+	
+		
+		Scanner sc = new Scanner(System.in);
+		testCases = sc.nextLong();
+		
+		for (int i = 1; i<=testCases; i++)
+			{
+			    number  = sc.nextLong();
+			    System.out.println(noOfZeros(number));
+	     	}
+
+	}
+	
+	public static long noOfZeros(long number)
+	{
+		
+		long count = 0;
+		for(int i = 5; number/i>=1; i*=5)
+		{
+			count = count + number/i;
+		}
+		return count;
+	}
+}
+

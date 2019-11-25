@@ -1,0 +1,50 @@
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int t;
+
+		Scanner sc = new Scanner(System.in);
+		t = sc.nextInt();
+		while (t > 0) {
+			int sum = 0;
+			int N = sc.nextInt();
+
+			if (N > 1000)
+				break;
+			if (N < 1)
+				break;
+
+			int[] men = new int[N];
+			int[] women = new int[N];
+
+			for (int i = 0; i < N; i++) {
+				men[i] = sc.nextInt();
+			}
+			Arrays.sort(men);
+			for (int j = 0; j < N; j++) {
+				women[j] = sc.nextInt();
+			}
+			Arrays.sort(women);
+			/*for(int p = 0; p<N;p++)
+			{
+				System.out.println(women[p]);
+			}*/
+
+			for (int k = 0; k < N; k++) {
+				sum += men[k]*women[k];
+			}
+
+			System.out.println(sum);
+
+			t--;
+		}
+
+	}
+
+}
+

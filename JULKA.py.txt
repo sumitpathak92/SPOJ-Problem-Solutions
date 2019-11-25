@@ -1,0 +1,7 @@
+for _ in range(10):
+    t = int(input())
+    m = int(input())
+    K = (t-m)/2
+    print(K+m)
+    print(K)
+    

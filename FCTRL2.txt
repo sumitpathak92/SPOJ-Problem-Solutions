@@ -1,0 +1,45 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+	
+	static long testCases;
+	static int inputs;
+
+	public static void main(String[] args) throws java.lang.IllegalArgumentException{
+	
+		Scanner sc = new Scanner(System.in);
+		testCases = sc.nextInt();
+		
+		for(int i = 1; i<= testCases; i++)
+		{
+			inputs = sc.nextInt();
+			if(inputs<=100 && inputs>=1)
+			{
+				System.out.println(factorialValue(inputs));
+			}
+			
+		}
+
+	}
+
+	private static BigInteger factorialValue(int inputs2) {
+		
+		BigInteger bigInteger;
+		
+		
+		if(inputs2==1)
+		{
+			bigInteger = BigInteger.ONE;
+		}
+		else 
+		{
+			bigInteger = BigInteger.valueOf((long)inputs2).multiply(factorialValue(inputs2 - 1));
+		}
+		 
+		return bigInteger;
+	}
+
+}
+
+
